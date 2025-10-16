@@ -1,6 +1,6 @@
 import {View, Text, Pressable, StyleSheet} from 'react-native';
 import { useRouter } from 'expo-router';
-import { useAuth } from './AuthProvider';
+import { useAuth } from '../../../../context/AuthProvider';
 import { use, useEffect } from 'react';
 
 export default function FDPPPP() {

@@ -1,7 +1,7 @@
 // Sandbox page to test things
 import { useRouter } from 'expo-router';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { useTaskStore } from './zustand/storeglobal';
+import { useTaskStore } from '../../../store/storeglobal';
 
 export default function Context() {
     const router = useRouter();

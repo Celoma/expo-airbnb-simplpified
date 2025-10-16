@@ -1,15 +1,30 @@
-import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native'
-import { useTaskStore } from './storeglobal.js' // Corrected import (removed braces
-
+import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useTaskStore } from '../../../../store/storeglobal.js';
+import { useState } from 'react';
+import { TextInput } from 'react-native';
 
 export default function Zustand() {
+
+    const [text, onChangeText] = useState('');
+
+    const handleAddTask = () => {
+        addTask(`Task # ${text}`)
+        onChangeText('');
+    }
+
     const { tasks, addTask, removeTask, removeAll } = useTaskStore()
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Tasks: {tasks.length}</Text>
-            <Pressable style={styles.button} onPress={() => addTask(`Task #${(Math.random() * 10).toFixed(0)}`)}>
+            <Pressable style={styles.button} onPress={() => handleAddTask()} disabled={text === ''}>
                 <Text style={styles.buttonText}>Add Task</Text>
             </Pressable>
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value={text}
+            placeholder="Task name"
+            />
             <Pressable style={styles.button} onPress={() => removeTask(tasks[tasks.length - 1])} disabled={tasks.length === 0}>
                 <Text style={styles.buttonText}>Remove Task</Text>
             </Pressable>
@@ -43,5 +58,12 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 20,
+    },
+    input: {
+        height: 40,
+        margin: 12,
+        borderWidth: 1,
+        padding: 10,
+        width: 200,
     },
 });
