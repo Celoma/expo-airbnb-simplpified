@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function Bonjour({ title = 'Bienvenue', primary }) {
     const bg = primary ?? '#FF5A5F';

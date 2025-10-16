@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, View, FlatList } from "react-native";
+import { FlatList, StyleSheet, View } from "react-native";
 import Card from "./Card";
 
 export default function Cards({ data }) {
@@ -21,11 +21,13 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     list: {
+        marginBottom: 20,
         marginTop: 10,
         alignItems: 'center',
-        paddingBottom: 100,
     },
     FlatList: {
-        width: '100%'
+        width: '100%',
+        marginBottom: 330,
+        paddingBottom: 20
     }
 });

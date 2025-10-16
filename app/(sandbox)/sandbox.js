@@ -11,19 +11,19 @@ export default function sandbox() {
                 onPress={() => {
                     router.back();
                 }}>
-                <Text style={styles.buttonText}>Test Button</Text>
+                <Text style={styles.buttonText}>Retour</Text>
             </Pressable>
             <Pressable style={styles.button}
                 onPress={() => {
-                    router.push({ pathname: "/(sandbox)/drawer-basic/" });
+                    router.push({ pathname: "/(sandbox)/navigation/navigation" });
                 }}>
-                <Text style={styles.buttonText}>Go to Drawer Basic</Text>
+                <Text style={styles.buttonText}>Go to navigation</Text>
             </Pressable>
             <Pressable style={styles.button}
                 onPress={() => {
-                    router.push({ pathname: "/(sandbox)/stack-basic/" });
+                    router.push({ pathname: "/(sandbox)/etat" });
                 }}>
-                <Text style={styles.buttonText}>Go to Stack Basic</Text>
+                <Text style={styles.buttonText}>Go to States of America</Text>
             </Pressable>
         </View>
     );

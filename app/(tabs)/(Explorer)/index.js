@@ -1,12 +1,10 @@
 import {StyleSheet, View } from 'react-native';
-import Bonjour from '../components/Bonjour';
-import Cards from '../components/Cards';
-import data from '../mock/data';
+import Bonjour from '../../../components/Bonjour';
+import Cards from '../../../components/Cards';
+import data from '../../../mock/data';
 import { Link } from 'expo-router';
-import sandbox from './(sandbox)/sandbox';
-
-export default function index() {
-
+ 
+export default function App() {
     return (
         <View style={styles.ROUGE}>
             <View style={styles.screen}>
@@ -21,12 +19,6 @@ export default function index() {
 const styles = StyleSheet.create({
     screen: {
         backgroundColor: '#F7F7F7',
-    },
-    ROUGE: {
-        marginTop: -50,
-        paddingTop: 35,
-        flex : 1,
-        backgroundColor: '#FF5A5F' 
     },
     sandbox: {
         marginBottom: 20,
